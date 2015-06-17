@@ -10,7 +10,7 @@ Router.map(function() {
   this.resource('restaurants',function() {
     this.resource('add-restaurant', {path: '/add'});
   });
-  this.resource('restaurant', {path: '/:restaurant_id'}, function() {
+  this.resource('restaurant', {path: 'restaurant/:restaurant_id'}, function() {
     this.resource('add-review');
   });
 

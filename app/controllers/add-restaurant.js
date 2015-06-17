@@ -8,7 +8,6 @@ export default Ember.Controller.extend({
         description: this.get('description'),
         address: this.get('address')
       });
-
       restaurant.save();
       this.transitionToRoute('restaurant', restaurant.id);
 

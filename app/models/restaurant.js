@@ -4,5 +4,5 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
   address: DS.attr('string'),
-  reviews: DS.hasMany('review')
+  reviews: DS.hasMany('review', {async: true})
 });

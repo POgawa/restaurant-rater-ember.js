@@ -6,17 +6,18 @@
 
 {{#if model.reviews}}
   <h2>Reviews:</h2>
-    {{#each model.reviews}}
-      {{description}}
-      {{author}}
+    {{#each model.reviews as |review|}}
+    <div class="row clearfix well">
+      {{review.description}}
+    </div>
     {{/each}}
-  {{outlet}}
 
 
-
+  {{#link-to 'add-review'}} Add another review {{/link-to}}
 {{else}}
   <h1>There are currently no reviews</h1>
-  {{#link-to 'add-review' model.id}} Please add review {{/link-to}}
-  <p>{{outlet}}</p>
+  {{#link-to 'add-review'}} Please add review {{/link-to}}
 
 {{/if}}
+
+  <p>{{outlet}}</p>
