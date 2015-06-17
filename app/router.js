@@ -11,8 +11,9 @@ Router.map(function() {
     this.resource('add-restaurant', {path: '/add'});
   });
   this.resource('restaurant', {path: '/:restaurant_id'}, function() {
-    this.resource('reviews');
+    this.resource('add-review');
   });
+
   this.resource('users');
 });
 

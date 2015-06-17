@@ -1,1 +1,22 @@
-{{model.name}}
+<h1>Restaurant: {{model.name}}</h1>
+<h2> Description: {{model.description}}</h2>
+
+
+<h2>Address: {{model.address}}</h2>
+
+{{#if model.reviews}}
+  <h2>Reviews:</h2>
+    {{#each model.reviews}}
+      {{description}}
+      {{author}}
+    {{/each}}
+  {{outlet}}
+
+
+
+{{else}}
+  <h1>There are currently no reviews</h1>
+  {{#link-to 'add-review' model.id}} Please add review {{/link-to}}
+  <p>{{outlet}}</p>
+
+{{/if}}

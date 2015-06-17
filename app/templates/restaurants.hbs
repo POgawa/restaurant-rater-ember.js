@@ -1,6 +1,6 @@
 {{#each model as |restaurant|}}
   <div class="row clearfix well">
-      {{restaurant.name}}
+      {{#link-to 'restaurant' restaurant.id}}{{restaurant.name}}{{/link-to}}
   </div>
 {{/each}}
 
