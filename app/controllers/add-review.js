@@ -4,23 +4,28 @@ export default Ember.Controller.extend({
   needs: ['restaurant'],
   actions: {
     save: function() {
-      var newReview = this.store.createRecord('review', {
-        description: this.get('description'),
-        date: new Date().toLocaleString()
-      });
+      if (this.get('description').length < 15) {
+        alert("Description must be over 15 characters long");
+          $('#addReview').modal('show');
+
+      } else {
+
+        var newReview = this.store.createRecord('review', {
+          description: this.get('description'),
+          date: new Date()
+        });
 
 
-      newReview.save();
-
-
-      var restaurant = this.get('controllers.restaurant.model');
-      debugger;
-      restaurant.get('reviews').pushObject(newReview);
-      restaurant.save();
-      restaurant.reload();
-      this.get(restaurant).reload();
-
-      this.set('desciption', '');
+        var restaurant = this.get('controllers.restaurant.model');
+        newReview.save().then(function() {
+          restaurant.get('reviews').pushObject(newReview);
+          restaurant.save();
+        });
+        this.setProperties({
+          description: ''
+        });
+        this.transitionToRoute('restaurant', restaurant.id);
+      }
     }
   }
 

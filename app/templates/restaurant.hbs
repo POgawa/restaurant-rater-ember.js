@@ -1,3 +1,4 @@
+
 <h1>Restaurant: {{model.name}}</h1>
 <h2> Description: {{model.description}}</h2>
 
@@ -8,16 +9,35 @@
   <h2>Reviews:</h2>
     {{#each model.reviews as |review|}}
     <div class="row clearfix well">
-      {{review.description}}
+      <p id="reviews" class="lead text-info">{{review.description}}</p>
+      <footer>
+      <h3 style="float:right;">  {{format-date review.date}} </h3>
+      </footer>
     </div>
     {{/each}}
 
 
-  {{#link-to 'add-review'}} Add another review {{/link-to}}
+  <p>Add another review </p>
 {{else}}
   <h1>There are currently no reviews</h1>
-  {{#link-to 'add-review'}} Please add review {{/link-to}}
 
 {{/if}}
 
-  <p>{{outlet}}</p>
+
+<div class="new-review">
+
+{{#link-to 'add-review'}}<button type="submit" class="btn btn-block btn-success" {{action 'add'}}>Add Review</button>{{/link-to}}
+  <div id="addReview" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Review</h4>
+        </div>
+        <div class="modal-body">
+          {{outlet}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
