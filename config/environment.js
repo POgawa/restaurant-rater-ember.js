@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'happyhour',
     environment: environment,
-    firebase: 'https://YOUR-FIREBASE-NAME.firebaseio.com/',
+    firebase: 'https:www.boiling-fire-2988.firebaseIO.com',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
