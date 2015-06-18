@@ -1,31 +1,33 @@
-{{#each model as |restaurant|}}
-  <div class="row clearfix well">
-     <div class="col-xs-12 col-sm-6">
-       {{#link-to 'restaurant' restaurant.id}}{{restaurant.name}}{{/link-to}}
-       <ul>
-         <li>{{restaurant.description}}</li>
-       </ul>
-     </div>
-     <div class="col-xs-12 col-sm-6">
-       {{google-maps address=restaurant.address}}
-     </div>
-  </div>
-{{/each}}
+  {{#each model as |restaurant|}}
+    <div class="row clearfix well">
+       <div class="col-xs-12 col-sm-6">
+         {{#link-to 'restaurant' restaurant.id}}{{restaurant.name}}{{/link-to}}
+         <ul>
+           <li>{{restaurant.description}}</li>
+           <li>{{restaurant.phone}}</li>
+           <li>{{restaurant.hours}}</li>
+         </ul>
+       </div>
+       <div class="col-xs-12 col-sm-6">
+         {{google-maps address=restaurant.address}}
+       </div>
+    </div>
+  {{/each}}
 
 
-<div class="new-restaurant">
-  {{#link-to 'add-restaurant'}}<button type="submit" class="btn btn-block btn-success" {{action 'add'}}>Add Restaurant</button>{{/link-to}}
-  <div id="addRestaurant" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add Restaurant</h4>
-        </div>
-        <div class="modal-body">
-          {{outlet}}
+  <div class="new-restaurant">
+    {{#link-to 'add-restaurant'}}<button type="submit" class="btn btn-block btn-success" {{action 'add'}}>Add Restaurant</button>{{/link-to}}
+    <div id="addRestaurant" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Add Restaurant</h4>
+          </div>
+          <div class="modal-body">
+            {{outlet}}
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
