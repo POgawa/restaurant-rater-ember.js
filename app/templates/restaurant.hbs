@@ -13,6 +13,7 @@
       <p id="reviews" class="lead text-info">{{review.description}}</p>
       <footer style="margin-bottom:0px;">
       <h6 style="float:right; margin-bottom:0px;">  {{format-date review.date}} </h6>
+      <button class="btn btn-danger btn-xs" {{action "removeReview" review}}>X</button>
       </footer>
     </div>
     {{/each}}
@@ -26,7 +27,7 @@
 
 
 <div class="new-review">
-
+<button class="btn btn-block btn-danger" {{action 'delete'}}>delete</button>
 {{#link-to 'add-review'}}<button type="submit" class="btn btn-block btn-success" {{action 'add'}}>Add Review</button>{{/link-to}}
   <div id="addReview" class="modal fade" role="dialog">
     <div class="modal-dialog">

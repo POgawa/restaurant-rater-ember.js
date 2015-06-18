@@ -12,7 +12,6 @@ export default Ember.Component.extend({
       var lng = results[0].geometry.location.lng();
       var myLatlng = new google.maps.LatLng(lat,lng);
 
-    debugger;
       var options = {
         center: myLatlng,                //parameters for map to be set where map is centered
         zoom: 15,
