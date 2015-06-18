@@ -3933,7 +3933,7 @@ catch(err) {
 if (runningTests) {
   require("happyhour/tests/test-helper");
 } else {
-  require("happyhour/app")["default"].create({"name":"happyhour","version":"0.0.0.f8314eac"});
+  require("happyhour/app")["default"].create({"name":"happyhour","version":"0.0.0.7b9827d1"});
 }
 
 /* jshint ignore:end */

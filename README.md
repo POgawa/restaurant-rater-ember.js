@@ -1,6 +1,4 @@
-AIzaSyBLB44RDQotLmxrIc76xHSpYDaymVKp6G0
 
-gmap api
 
 # Happyhour
 
