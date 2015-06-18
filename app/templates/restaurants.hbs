@@ -1,6 +1,14 @@
 {{#each model as |restaurant|}}
   <div class="row clearfix well">
-      {{#link-to 'restaurant' restaurant.id}}{{restaurant.name}}{{/link-to}}
+     <div class="col-xs-12 col-sm-6">
+       {{#link-to 'restaurant' restaurant.id}}{{restaurant.name}}{{/link-to}}
+       <ul>
+         <li>{{restaurant.description}}</li>
+       </ul>
+     </div>
+     <div class="col-xs-12 col-sm-6">
+       {{google-maps address=restaurant.address}}
+     </div>
   </div>
 {{/each}}
 

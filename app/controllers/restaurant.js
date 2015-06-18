@@ -29,10 +29,11 @@ export default Ember.Controller.extend({
         review.destroyRecord();
         review.save();
       });
-      // restaurant.get('reviews').removeObject(review);
       restaurant.save();
+    },
 
-      // review.destroyRecord();
+    edit: function() {
+      $('#editRestaurant').modal('show');
     }
   }
 });

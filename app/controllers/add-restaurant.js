@@ -6,9 +6,16 @@ export default Ember.Controller.extend({
       var restaurant = this.store.createRecord('restaurant', {
         name: this.get('name'),
         description: this.get('description'),
-        address: this.get('address')
+        address: this.get('address'),
+        hours: this.get('hours'),
+        phone: this.get('phone'),
       });
       restaurant.save();
+      this.setProperties({
+        name: '',
+        description: '',
+        address: ''
+      });
       this.transitionToRoute('restaurant', restaurant.id);
 
     }
