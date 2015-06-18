@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
         description: this.get('description'),
         address: this.get('address'),
         hours: this.get('hours'),
-        phone: this.get('phone'),
+        phone: this.get('phone')
       });
       restaurant.save();
       this.setProperties({

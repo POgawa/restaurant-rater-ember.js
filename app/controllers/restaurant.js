@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-
+export default Ember.ObjectController.extend({
   actions: {
     add: function() {
       $('#addReview').modal('show');
@@ -34,6 +33,10 @@ export default Ember.Controller.extend({
 
     edit: function() {
       $('#editRestaurant').modal('show');
+    },
+
+    save: function() {
+      this.get('model').save();
     }
   }
 });

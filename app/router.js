@@ -13,7 +13,7 @@ Router.map(function() {
   this.resource('restaurant', {path: 'restaurant/:restaurant_id'}, function() {
     this.resource('add-review');
   });
-
+  this.resource('edit-restaurant');
   this.resource('users');
 });
 
